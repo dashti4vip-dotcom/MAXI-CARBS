@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#06110a" />
+  <meta name="description" content="VyoMax Maxi Carbs — Apple flavour 3D prototype." />
+  <title>VyoMax Maxi Carbs — Apple 3D Prototype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/images/apple-004.webp" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="bg-orb bg-orb--1" aria-hidden="true"></div>
+  <div class="bg-orb bg-orb--2" aria-hidden="true"></div>
+  <div class="bg-vignette" aria-hidden="true"></div>
+
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__mark">V</div>
+    <p>Loading Apple 3D Prototype</p>
+    <div class="loader__bar"><i id="loaderBar"></i></div>
+  </div>
+
+  <header class="header" id="header">
+    <a class="brand" href="#top"><span>V</span><b>VyoMax</b></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#story">Experience</a>
+      <a href="#stats">Formula</a>
+      <a href="#buy">Find it</a>
+    </nav>
+    <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="false">Sound off</button>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero__copy reveal">
+        <p class="eyebrow"><span></span> Apple flavour · 3D prototype</p>
+        <h1><span>MAXI</span><span class="outline">CARBS</span></h1>
+        <p class="hero__lead">A rebuilt cinematic version focused on one thing: making the existing sections feel closer to the reference through real-time 3D, stronger lighting, smoother scroll motion, and a more premium mobile-first product presence.</p>
+        <div class="hero__meta">
+          <article><small>Flavour</small><strong>Apple</strong></article>
+          <article><small>Formula</small><strong>60G Carbs + BCAA</strong></article>
+          <article><small>Status</small><strong>3D Test</strong></article>
+        </div>
+        <div class="hero__actions">
+          <a class="button button--solid" href="#story">Enter the scene</a>
+          <a class="button button--ghost" href="#buy">Find at DIETLY</a>
+        </div>
+      </div>
+
+      <div class="hero__visual reveal">
+        <div class="product-shell is-fallback" id="productShell">
+          <canvas id="threeCanvas" aria-label="3D Apple bottle"></canvas>
+          <img class="product-fallback" src="assets/images/apple-004.webp" alt="Maxi Carbs Apple bottle" />
+          <div class="product-shadow" aria-hidden="true"></div>
+          <div class="product-glow" aria-hidden="true"></div>
+          <div class="product-ring product-ring--1" aria-hidden="true"></div>
+          <div class="product-ring product-ring--2" aria-hidden="true"></div>
+          <div class="product-flare" aria-hidden="true"></div>
+        </div>
+        <div class="visual-card visual-card--left">
+          <small>Hydration Study</small>
+          <strong>Reflective plastic, green liquid core, studio-grade highlights.</strong>
+        </div>
+        <div class="visual-card visual-card--right">
+          <small>Motion Language</small>
+          <strong>Scroll-linked camera moves with touch-friendly performance.</strong>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#story" aria-label="Scroll to experience"><span>Scroll</span><i></i></a>
+    </section>
+
+    <section class="story" id="story">
+      <div class="story__sticky">
+        <div class="story__track">
+          <article class="story-step is-active" data-step="0">
+            <p class="eyebrow"><span></span> Scene 01</p>
+            <h2>Bring the bottle forward.</h2>
+            <p>The product sits deeper inside a cinematic frame with more convincing scale, shadow, reflection, and a cleaner mobile silhouette.</p>
+          </article>
+          <article class="story-step" data-step="1">
+            <p class="eyebrow"><span></span> Scene 02</p>
+            <h2>Move like a camera, not a slideshow.</h2>
+            <p>Instead of swapping flat images, the Apple bottle now rotates as a 3D object with a smooth studio turn and light sweep as the page moves.</p>
+          </article>
+          <article class="story-step" data-step="2">
+            <p class="eyebrow"><span></span> Scene 03</p>
+            <h2>Push the label and liquid.</h2>
+            <p>The label gets dedicated geometry, the cap gains its own volume, and the liquid core adds depth so the bottle feels more like a real product piece.</p>
+          </article>
+          <article class="story-step" data-step="3">
+            <p class="eyebrow"><span></span> Scene 04</p>
+            <h2>Decide if 3D is the path.</h2>
+            <p>If this Apple test feels clearly stronger on your phone, we can rebuild the other flavours on the same foundation instead of polishing the older 2D system.</p>
+          </article>
+        </div>
+
+        <div class="story__hud">
+          <div class="story__meter"><i id="storyMeter"></i></div>
+          <div class="story__count"><b id="storyIndex">01</b><span>/04</span></div>
+          <div class="story__scenes">
+            <button class="is-active" data-target="0" type="button">01</button>
+            <button data-target="1" type="button">02</button>
+            <button data-target="2" type="button">03</button>
+            <button data-target="3" type="button">04</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats" id="stats">
+      <div class="section-heading reveal">
+        <p class="eyebrow"><span></span> Formula focus</p>
+        <h2>Same sections. Sharper quality.</h2>
+        <p>No extra content blocks here — just a cleaner, more premium presentation of what already matters.</p>
+      </div>
+      <div class="stats__grid">
+        <article class="stat-card reveal">
+          <strong>60G</strong>
+          <span>Carbohydrates</span>
+        </article>
+        <article class="stat-card reveal">
+          <strong>BCAA</strong>
+          <span>Support</span>
+        </article>
+        <article class="stat-card reveal">
+          <strong>Ready</strong>
+          <span>To drink</span>
+        </article>
+        <article class="stat-card reveal">
+          <strong>Apple</strong>
+          <span>3D prototype flavour</span>
+        </article>
+      </div>
+      <div class="panel reveal">
+        <div>
+          <p class="eyebrow"><span></span> What changed in this prototype?</p>
+          <h3>We traded fake depth for real depth.</h3>
+          <p>This version is not about adding more sections. It tests whether a real-time 3D product scene can finally give the current sections the visual weight and polish that the reference had.</p>
+        </div>
+        <img src="assets/images/apple-004.webp" alt="Maxi Carbs Apple bottle angle" />
+      </div>
+    </section>
+
+    <section class="buy" id="buy">
+      <div class="buy__copy reveal">
+        <p class="eyebrow"><span></span> Exclusive availability</p>
+        <h2>Find Maxi Carbs at DIETLY.</h2>
+        <p>Building 444, Sabah Al Salem, St 120, Kuwait City.</p>
+      </div>
+      <div class="buy__actions reveal">
+        <a class="button button--solid" href="https://maps.app.goo.gl/RBZTtnciTaVE9Ztg9?g_st=ic" target="_blank" rel="noreferrer">Open Google Maps</a>
+        <a class="button button--ghost" href="https://instagram.com/muscles_art" target="_blank" rel="noreferrer">@muscles_art</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>VyoMax · Maxi Carbs · Apple 3D prototype</p>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
