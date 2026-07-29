@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#071108" />
+  <meta name="description" content="VyoMax Maxi Carbs - a cinematic performance drink experience." />
+  <title>VyoMax - Maxi Carbs</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23071108'/%3E%3Cpath d='M20 22h18l12 42 12-42h18L59 79H41z' fill='%237dff58'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__core"><span>V</span></div>
+    <p class="loader__brand">VyoMax</p>
+    <div class="loader__track"><i id="loaderBar"></i></div>
+    <p class="loader__count" id="loaderCount">00</p>
+  </div>
+
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-light" id="cursorLight" aria-hidden="true"></div>
+
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#top" aria-label="VyoMax home">
+      <span class="brand__mark">V</span>
+      <span class="brand__word">VyoMax</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#product">Product</a>
+      <a href="#formula">Performance</a>
+      <a href="#buy" class="nav-pill">Find it</a>
+    </nav>
+    <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#product">Product</a>
+    <a href="#formula">Performance</a>
+    <a href="#buy">Find it</a>
+  </div>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero__mesh" aria-hidden="true"></div>
+      <div class="hero__wash hero__wash--a" aria-hidden="true"></div>
+      <div class="hero__wash hero__wash--b" aria-hidden="true"></div>
+
+      <div class="hero__copy reveal">
+        <p class="eyebrow"><span></span> Performance fuel · Apple</p>
+        <h1><span>MAXI</span><span class="stroke">CARBS</span></h1>
+        <p class="hero__lead">Fast fuel for the work ahead. A bold carbohydrate and BCAA drink built for movement.</p>
+        <div class="hero__actions">
+          <a class="button button--solid" href="#product">Inspect the bottle</a>
+          <a class="button button--glass" href="#buy">Available at Dietly</a>
+        </div>
+      </div>
+
+      <div class="hero-product" id="heroProduct" aria-label="Maxi Carbs Apple bottle">
+        <div class="orbit orbit--one" aria-hidden="true"></div>
+        <div class="orbit orbit--two" aria-hidden="true"></div>
+        <div class="hero-product__glow" aria-hidden="true"></div>
+        <img class="hero-bottle" id="heroBottle" src="assets/images/apple-003.webp" alt="VyoMax Maxi Carbs Apple bottle" />
+        <div class="hero-product__base" aria-hidden="true"></div>
+        <div class="spec-chip spec-chip--left"><strong>60G</strong><span>CARBS</span></div>
+        <div class="spec-chip spec-chip--right"><strong>BCAA</strong><span>SUPPORT</span></div>
+      </div>
+
+      <p class="hero__vertical" aria-hidden="true">READY TO MOVE · READY TO DRINK</p>
+      <a class="scroll-cue" href="#product"><span>Scroll to rotate</span><i></i></a>
+    </section>
+
+    <section class="intro" id="formula">
+      <div class="intro__index">01</div>
+      <div class="intro__copy reveal">
+        <p class="eyebrow"><span></span> Product focus</p>
+        <h2>A bottle designed to look as fast as it feels.</h2>
+        <p>The second build session replaces the concept bottle with the real Maxi Carbs product and adds a cinematic inspection sequence driven by your scroll.</p>
+      </div>
+      <div class="intro__stats reveal">
+        <article><strong>500</strong><span>ML bottle</span></article>
+        <article><strong>60G</strong><span>Carbohydrates</span></article>
+        <article><strong>5</strong><span>Product angles</span></article>
+      </div>
+    </section>
+
+    <section class="product-lab" id="product">
+      <div class="product-lab__sticky">
+        <div class="lab-background" aria-hidden="true">
+          <div class="lab-background__disc"></div>
+          <div class="lab-background__beam"></div>
+          <div class="lab-background__grid"></div>
+        </div>
+
+        <div class="lab-copy">
+          <p class="eyebrow"><span></span> 360° product study</p>
+          <h2 id="labTitle">Face the energy.</h2>
+          <p id="labText">Scroll slowly to inspect the Apple bottle from every available angle.</p>
+          <div class="lab-progress" aria-label="Product rotation progress">
+            <i id="labProgress"></i>
+          </div>
+          <p class="lab-step"><span id="labStep">01</span> / 05</p>
+        </div>
+
+        <div class="sequence-stage" id="sequenceStage" aria-label="Scroll-controlled bottle rotation">
+          <div class="sequence-stage__aura" aria-hidden="true"></div>
+          <div class="sequence-stage__rings" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="sequence-stage__shadow" aria-hidden="true"></div>
+          <div class="bottle-sequence" id="bottleSequence">
+            <img class="sequence-frame is-active" src="assets/images/apple-003.webp" alt="Maxi Carbs Apple bottle front view" />
+            <img class="sequence-frame" src="assets/images/apple-000.webp" alt="Maxi Carbs Apple bottle front side view" />
+            <img class="sequence-frame" src="assets/images/apple-001.webp" alt="Maxi Carbs Apple bottle side view" />
+            <img class="sequence-frame" src="assets/images/apple-002.webp" alt="Maxi Carbs Apple bottle rear view" />
+            <img class="sequence-frame" src="assets/images/apple-004.webp" alt="Maxi Carbs Apple bottle opposite side view" />
+          </div>
+          <div class="scan-line" aria-hidden="true"></div>
+          <span class="drag-hint">MOVE / SCROLL</span>
+        </div>
+
+        <div class="lab-data">
+          <article class="data-card" id="dataCardA"><span>01</span><strong>Quick fuel</strong><p>Built for demanding training and long sessions.</p></article>
+          <article class="data-card" id="dataCardB"><span>02</span><strong>Ready to drink</strong><p>Open, chill and move. No mixing required.</p></article>
+          <article class="data-card" id="dataCardC"><span>03</span><strong>Distinct profile</strong><p>A sculpted bottle and high-contrast Apple identity.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="momentum">
+      <div class="momentum__copy reveal">
+        <p class="eyebrow"><span></span> Keep momentum</p>
+        <h2>From shelf to session.</h2>
+        <p>A responsive product stage, layered lighting and smooth scroll choreography now form the foundation for the five-flavour system in the next session.</p>
+      </div>
+      <div class="momentum__visual reveal" aria-hidden="true">
+        <div class="energy-word">MOVE</div>
+        <div class="energy-line"><i></i></div>
+      </div>
+    </section>
+
+    <section class="buy" id="buy">
+      <div>
+        <p class="eyebrow"><span></span> Exclusive availability</p>
+        <h2>Find Maxi Carbs at DIETLY.</h2>
+        <p>Building 444, Sabah Al Salem, St 120, Kuwait City.</p>
+      </div>
+      <div class="buy__actions">
+        <a class="button button--dark" href="https://maps.app.goo.gl/RBZTtnciTaVE9Ztg9?g_st=ic" target="_blank" rel="noreferrer">Open Google Maps</a>
+        <a class="button button--outline-dark" href="https://www.instagram.com/muscles_art/" target="_blank" rel="noreferrer">@muscles_art</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#top"><span class="brand__mark">V</span><span class="brand__word">VyoMax</span></a>
+    <p>Maxi Carbs · Session 02</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
