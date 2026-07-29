@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#07120c" />
+  <meta name="description" content="VyoMax Maxi Carbs — cinematic product experience." />
+  <title>VyoMax — Maxi Carbs</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__orb"></div>
+    <div class="loader__brand">VyoMax</div>
+    <div class="loader__line"><span></span></div>
+    <div class="loader__count" id="loaderCount">00</div>
+  </div>
+
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#top" aria-label="VyoMax home">
+      <span class="brand__mark">V</span>
+      <span class="brand__text">VyoMax</span>
+    </a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="#story">Product</a>
+      <a href="#power">Performance</a>
+      <a class="nav__cta" href="#buy">Find it</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero__aurora hero__aurora--one"></div>
+      <div class="hero__aurora hero__aurora--two"></div>
+      <div class="hero__grid" aria-hidden="true"></div>
+
+      <div class="hero__copy reveal">
+        <p class="eyebrow">Performance Fuel · 500 ml</p>
+        <h1>
+          <span>MAXI</span>
+          <span class="outline">CARBS</span>
+        </h1>
+        <p class="hero__lead">Fast energy. Bold flavour. Built to keep you moving when the session gets serious.</p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="#story">Explore the formula</a>
+          <a class="button button--ghost" href="#buy">Available at Dietly</a>
+        </div>
+      </div>
+
+      <div class="product-stage" id="productStage" aria-label="Maxi Carbs product visual">
+        <div class="halo halo--back"></div>
+        <div class="product-shadow"></div>
+        <svg class="bottle" id="bottle" viewBox="0 0 420 920" role="img" aria-label="Stylised Maxi Carbs bottle">
+          <defs>
+            <linearGradient id="body" x1="0" x2="1">
+              <stop offset="0" stop-color="#0b0e0c"/>
+              <stop offset=".22" stop-color="#222924"/>
+              <stop offset=".48" stop-color="#0d110e"/>
+              <stop offset=".78" stop-color="#202721"/>
+              <stop offset="1" stop-color="#050706"/>
+            </linearGradient>
+            <linearGradient id="cap" x1="0" x2="1">
+              <stop offset="0" stop-color="#0a0c0a"/>
+              <stop offset=".4" stop-color="#363d36"/>
+              <stop offset="1" stop-color="#070907"/>
+            </linearGradient>
+            <linearGradient id="label" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#1b3f29"/>
+              <stop offset=".45" stop-color="#64ff7a"/>
+              <stop offset="1" stop-color="#10251a"/>
+            </linearGradient>
+            <filter id="glow"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <g>
+            <rect x="105" y="30" width="210" height="116" rx="30" fill="url(#cap)"/>
+            <g opacity=".45">
+              <path d="M122 50v75M143 50v75M164 50v75M185 50v75M206 50v75M227 50v75M248 50v75M269 50v75M290 50v75" stroke="#88948b" stroke-width="5"/>
+            </g>
+            <path d="M132 135c-16 48-25 78-25 115v511c0 66 43 113 103 113s103-47 103-113V250c0-37-9-67-25-115z" fill="url(#body)" stroke="#414a42" stroke-width="3"/>
+            <path d="M130 220c42-24 118-24 160 0v390c-42 22-118 22-160 0z" fill="url(#label)"/>
+            <path d="M130 220c42-24 118-24 160 0" fill="none" stroke="#bdffc7" stroke-opacity=".75" stroke-width="3"/>
+            <path d="M290 220c-42 23-118 23-160 0" transform="translate(0 390)" fill="none" stroke="#06160b" stroke-opacity=".8" stroke-width="3"/>
+            <text x="210" y="285" text-anchor="middle" fill="#07110a" font-family="Arial Black,Arial" font-size="34" letter-spacing="1">VyoMax</text>
+            <text x="210" y="405" text-anchor="middle" fill="#061109" font-family="Arial Black,Arial" font-size="58" transform="rotate(-6 210 405)">MAXI</text>
+            <text x="210" y="465" text-anchor="middle" fill="#effff1" font-family="Arial Black,Arial" font-size="55" transform="rotate(-6 210 465)">CARBS</text>
+            <text x="210" y="518" text-anchor="middle" fill="#0c1e10" font-family="Arial,Helvetica" font-size="18" font-weight="700">BCAA · ENERGY DRINK</text>
+            <circle cx="210" cy="566" r="34" fill="#0b2311" opacity=".86"/>
+            <path d="M191 567c8-18 31-25 47-7-8 18-31 25-47 7z" fill="#e8ffec"/>
+            <path d="M210 553c-2 12-6 21-17 28" fill="none" stroke="#77ff87" stroke-width="5" stroke-linecap="round"/>
+            <path d="M126 260c18-17 38-27 58-32" fill="none" stroke="#dfffe4" stroke-opacity=".3" stroke-width="10" stroke-linecap="round"/>
+            <path d="M142 166c-15 93-13 560 10 641" fill="none" stroke="#fff" stroke-opacity=".12" stroke-width="11" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <div class="halo halo--front"></div>
+        <div class="product-tag product-tag--left"><span>01</span> Fast carbs</div>
+        <div class="product-tag product-tag--right"><span>02</span> BCAA support</div>
+      </div>
+
+      <div class="hero__sidecopy" aria-hidden="true">MAXIMUM OUTPUT</div>
+      <a class="scroll-cue" href="#story" aria-label="Scroll to next section">
+        <span>Scroll to charge</span>
+        <i></i>
+      </a>
+    </section>
+
+    <section class="story" id="story">
+      <div class="story__number">01</div>
+      <div class="story__content reveal">
+        <p class="eyebrow">Designed for momentum</p>
+        <h2>Energy that keeps pace with your ambition.</h2>
+        <p>Maxi Carbs combines an aggressive visual identity with a clean, fluid digital experience. This first session establishes the cinematic direction, movement system and mobile-first layout.</p>
+      </div>
+      <div class="story__metrics reveal">
+        <div><strong>5</strong><span>Flavours</span></div>
+        <div><strong>500</strong><span>ml bottle</span></div>
+        <div><strong>24/7</strong><span>Drive</span></div>
+      </div>
+    </section>
+
+    <section class="power" id="power">
+      <div class="power__sticky">
+        <p class="eyebrow">Scroll-reactive foundation</p>
+        <h2>Built to move.</h2>
+        <div class="power__track"><span id="powerProgress"></span></div>
+      </div>
+    </section>
+
+    <section class="buy" id="buy">
+      <p class="eyebrow">Exclusive availability</p>
+      <h2>Find Maxi Carbs at DIETLY.</h2>
+      <p>Building 444, Sabah Al Salem, St 120, Kuwait City.</p>
+      <div class="hero__actions">
+        <a class="button button--primary" target="_blank" rel="noreferrer" href="https://maps.app.goo.gl/RBZTtnciTaVE9Ztg9?g_st=ic">Open in Google Maps</a>
+        <a class="button button--ghost" target="_blank" rel="noreferrer" href="https://www.instagram.com/muscles_art/">@muscles_art</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
