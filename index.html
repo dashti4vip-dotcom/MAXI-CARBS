@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#071108" id="themeColor" />
+  <meta name="description" content="Explore all five VyoMax Maxi Carbs flavours in a cinematic interactive experience." />
+  <title>VyoMax Maxi Carbs — Choose Your Flavour</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23071108'/%3E%3Cpath d='M20 22h18l12 42 12-42h18L59 79H41z' fill='%237dff58'/%3E%3C/svg%3E" />
+  <link rel="preload" as="image" href="assets/images/apple-000.webp" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-flavour="apple">
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__core"><span>V</span></div>
+    <p class="loader__brand">VyoMax</p>
+    <div class="loader__track"><i id="loaderBar"></i></div>
+    <p class="loader__count" id="loaderCount">00</p>
+  </div>
+
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-light" id="cursorLight" aria-hidden="true"></div>
+
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#top" aria-label="VyoMax home">
+      <span class="brand__mark">V</span>
+      <span class="brand__word">VyoMax</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#flavours">Flavours</a>
+      <a href="#product">Product</a>
+      <a href="#buy" class="nav-pill">Find it</a>
+    </nav>
+    <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#flavours">Flavours</a>
+    <a href="#product">Product</a>
+    <a href="#buy">Find it</a>
+  </div>
+
+  <main>
+    <section class="hero" id="top" aria-labelledby="heroTitle">
+      <div class="hero__mesh" aria-hidden="true"></div>
+      <div class="hero__wash hero__wash--a" aria-hidden="true"></div>
+      <div class="hero__wash hero__wash--b" aria-hidden="true"></div>
+      <div class="hero__fruit-word" id="heroFruitWord" aria-hidden="true">APPLE</div>
+
+      <div class="hero__copy reveal">
+        <p class="eyebrow"><span></span> Performance fuel · <b id="heroEyebrow">Apple</b></p>
+        <h1 id="heroTitle"><span>MAXI</span><span class="stroke">CARBS</span></h1>
+        <p class="hero__flavour" id="heroFlavour">APPLE</p>
+        <p class="hero__lead" id="heroLead">Crisp, electric and built to keep momentum moving.</p>
+        <div class="hero__actions">
+          <a class="button button--solid" href="#flavours">Explore flavours</a>
+          <a class="button button--glass" href="#buy">Available at Dietly</a>
+        </div>
+      </div>
+
+      <div class="hero-product flavour-swipe-zone" id="heroProduct" aria-label="Maxi Carbs flavour viewer" tabindex="0">
+        <div class="orbit orbit--one" aria-hidden="true"></div>
+        <div class="orbit orbit--two" aria-hidden="true"></div>
+        <div class="hero-product__glow" aria-hidden="true"></div>
+        <div class="hero-bottles" id="heroBottles" aria-live="polite">
+          <img class="hero-bottle is-active" data-flavour-img="apple" src="assets/images/apple-000.webp" alt="VyoMax Maxi Carbs Apple bottle" />
+          <img class="hero-bottle" data-flavour-img="grape" src="assets/images/grape-000.webp" alt="VyoMax Maxi Carbs Grape bottle" />
+          <img class="hero-bottle" data-flavour-img="blue" src="assets/images/blue-000.webp" alt="VyoMax Maxi Carbs Blue Exotic bottle" />
+          <img class="hero-bottle" data-flavour-img="strawberry" src="assets/images/strawberry-000.webp" alt="VyoMax Maxi Carbs Strawberry bottle" />
+          <img class="hero-bottle" data-flavour-img="watermelon" src="assets/images/watermelon-000.webp" alt="VyoMax Maxi Carbs Watermelon bottle" />
+        </div>
+        <div class="hero-product__base" aria-hidden="true"></div>
+        <div class="spec-chip spec-chip--left"><strong>60G</strong><span>CARBS</span></div>
+        <div class="spec-chip spec-chip--right"><strong>BCAA</strong><span>SUPPORT</span></div>
+        <button class="flavour-arrow flavour-arrow--prev" data-flavour-prev aria-label="Previous flavour"><span>←</span></button>
+        <button class="flavour-arrow flavour-arrow--next" data-flavour-next aria-label="Next flavour"><span>→</span></button>
+      </div>
+
+      <div class="hero-selector" aria-label="Choose a flavour">
+        <div class="selector-count"><strong id="flavourNumber">01</strong><span>/ 05</span></div>
+        <div class="flavour-tabs" id="heroTabs">
+          <button class="flavour-tab is-active" data-flavour="apple"><i></i><span>Apple</span></button>
+          <button class="flavour-tab" data-flavour="grape"><i></i><span>Grape</span></button>
+          <button class="flavour-tab" data-flavour="blue"><i></i><span>Blue Exotic</span></button>
+          <button class="flavour-tab" data-flavour="strawberry"><i></i><span>Strawberry</span></button>
+          <button class="flavour-tab" data-flavour="watermelon"><i></i><span>Watermelon</span></button>
+        </div>
+        <p class="swipe-note"><span>↔</span> Swipe to change flavour</p>
+      </div>
+
+      <p class="hero__vertical" aria-hidden="true">FIVE FLAVOURS · ONE MISSION</p>
+      <a class="scroll-cue" href="#flavours"><span>Meet the line-up</span><i></i></a>
+    </section>
+
+    <section class="intro" id="flavours">
+      <div class="intro__index">02</div>
+      <div class="intro__copy reveal">
+        <p class="eyebrow"><span></span> The full line-up</p>
+        <h2>Five moods. One performance formula.</h2>
+        <p>Move between Apple, Grape, Blue Exotic, Strawberry and Watermelon. Every selection changes the lighting, atmosphere and product throughout the site.</p>
+      </div>
+      <div class="intro__stats reveal">
+        <article><strong>05</strong><span>Distinct flavours</span></article>
+        <article><strong>25</strong><span>Product angles</span></article>
+        <article><strong>01</strong><span>Connected experience</span></article>
+      </div>
+    </section>
+
+    <section class="flavour-gallery" aria-label="Interactive flavour gallery">
+      <div class="flavour-gallery__sticky">
+        <div class="gallery-backdrop" aria-hidden="true">
+          <div class="gallery-backdrop__orb"></div>
+          <div class="gallery-backdrop__word" id="galleryWord">APPLE</div>
+          <div class="gallery-backdrop__lines"></div>
+        </div>
+
+        <div class="gallery-copy">
+          <p class="eyebrow"><span></span> Selected flavour</p>
+          <p class="gallery-copy__count"><b id="galleryNumber">01</b> / 05</p>
+          <h2 id="galleryTitle">Apple</h2>
+          <p id="galleryText">Crisp and bright with an electric green identity.</p>
+        </div>
+
+        <div class="gallery-stage flavour-swipe-zone" id="galleryStage" tabindex="0">
+          <div class="gallery-stage__halo" aria-hidden="true"></div>
+          <div class="gallery-stage__ring" aria-hidden="true"></div>
+          <div class="gallery-bottles">
+            <img class="gallery-bottle is-active" data-flavour-img="apple" src="assets/images/apple-000.webp" alt="Maxi Carbs Apple" />
+            <img class="gallery-bottle" data-flavour-img="grape" src="assets/images/grape-000.webp" alt="Maxi Carbs Grape" />
+            <img class="gallery-bottle" data-flavour-img="blue" src="assets/images/blue-000.webp" alt="Maxi Carbs Blue Exotic" />
+            <img class="gallery-bottle" data-flavour-img="strawberry" src="assets/images/strawberry-000.webp" alt="Maxi Carbs Strawberry" />
+            <img class="gallery-bottle" data-flavour-img="watermelon" src="assets/images/watermelon-000.webp" alt="Maxi Carbs Watermelon" />
+          </div>
+          <div class="gallery-stage__shadow" aria-hidden="true"></div>
+          <button class="gallery-arrow gallery-arrow--prev" data-flavour-prev aria-label="Previous flavour">←</button>
+          <button class="gallery-arrow gallery-arrow--next" data-flavour-next aria-label="Next flavour">→</button>
+        </div>
+
+        <div class="flavour-cards" id="flavourCards">
+          <button class="flavour-card is-active" data-flavour="apple"><i></i><span>01</span><strong>Apple</strong></button>
+          <button class="flavour-card" data-flavour="grape"><i></i><span>02</span><strong>Grape</strong></button>
+          <button class="flavour-card" data-flavour="blue"><i></i><span>03</span><strong>Blue Exotic</strong></button>
+          <button class="flavour-card" data-flavour="strawberry"><i></i><span>04</span><strong>Strawberry</strong></button>
+          <button class="flavour-card" data-flavour="watermelon"><i></i><span>05</span><strong>Watermelon</strong></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-lab" id="product">
+      <div class="product-lab__sticky">
+        <div class="lab-background" aria-hidden="true">
+          <div class="lab-background__disc"></div>
+          <div class="lab-background__beam"></div>
+          <div class="lab-background__grid"></div>
+        </div>
+
+        <div class="lab-copy">
+          <p class="eyebrow"><span></span> 360° product study · <b id="labFlavour">Apple</b></p>
+          <h2 id="labTitle">Face the energy.</h2>
+          <p id="labText">Scroll slowly to inspect the selected bottle from every available angle.</p>
+          <div class="lab-progress" aria-label="Product rotation progress"><i id="labProgress"></i></div>
+          <p class="lab-step"><span id="labStep">01</span> / 05</p>
+        </div>
+
+        <div class="sequence-stage" id="sequenceStage" aria-label="Scroll-controlled bottle rotation">
+          <div class="sequence-stage__aura" aria-hidden="true"></div>
+          <div class="sequence-stage__rings" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="sequence-stage__shadow" aria-hidden="true"></div>
+          <div class="bottle-sequence" id="bottleSequence">
+            <img class="sequence-frame is-active" src="assets/images/apple-000.webp" alt="Maxi Carbs bottle front view" />
+            <img class="sequence-frame" src="assets/images/apple-001.webp" alt="Maxi Carbs bottle front side view" />
+            <img class="sequence-frame" src="assets/images/apple-002.webp" alt="Maxi Carbs bottle side view" />
+            <img class="sequence-frame" src="assets/images/apple-003.webp" alt="Maxi Carbs bottle rear view" />
+            <img class="sequence-frame" src="assets/images/apple-004.webp" alt="Maxi Carbs bottle opposite side view" />
+          </div>
+          <div class="scan-line" aria-hidden="true"></div>
+          <span class="drag-hint">MOVE / SCROLL</span>
+        </div>
+
+        <div class="lab-data">
+          <article class="data-card is-active"><span>01</span><strong>Quick fuel</strong><p>Built for demanding training and long sessions.</p></article>
+          <article class="data-card"><span>02</span><strong>Ready to drink</strong><p>Open, chill and move. No mixing required.</p></article>
+          <article class="data-card"><span>03</span><strong>Five identities</strong><p>One bottle shape, five high-impact flavour worlds.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="momentum">
+      <div class="momentum__copy reveal">
+        <p class="eyebrow"><span></span> Your flavour. Your pace.</p>
+        <h2 id="momentumTitle">Choose Apple. Keep moving.</h2>
+        <p>Swipe, tap or use the arrows. Your choice follows you through the complete product experience.</p>
+      </div>
+      <div class="momentum__visual reveal" aria-hidden="true">
+        <div class="energy-word" id="energyWord">APPLE</div>
+        <div class="energy-line"><i></i></div>
+      </div>
+    </section>
+
+    <section class="buy" id="buy">
+      <div>
+        <p class="eyebrow"><span></span> Exclusive availability</p>
+        <h2>Find Maxi Carbs at DIETLY.</h2>
+        <p>Building 444, Sabah Al Salem, St 120, Kuwait City.</p>
+      </div>
+      <div class="buy__actions">
+        <a class="button button--dark" href="https://maps.app.goo.gl/RBZTtnciTaVE9Ztg9?g_st=ic" target="_blank" rel="noreferrer">Open Google Maps</a>
+        <a class="button button--outline-dark" href="https://www.instagram.com/muscles_art/" target="_blank" rel="noreferrer">@muscles_art</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#top"><span class="brand__mark">V</span><span class="brand__word">VyoMax</span></a>
+    <p>Maxi Carbs · Session 03</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
